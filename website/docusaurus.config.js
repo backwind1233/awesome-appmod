@@ -57,7 +57,7 @@ const config = {
         title: "awesome-appmod",
         logo: {
           alt: "Awesome AppMod logo",
-          src: "img/logo.png",
+          src: "img/appmod-logo.png",
           href: "/",
           target: "_self",
           width: 32,
