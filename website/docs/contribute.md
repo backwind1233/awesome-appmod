@@ -26,6 +26,8 @@ We welcome contributions from the community! This guide will help you contribute
      "vsInstallLink": "https://vscode.dev/redirect?url=vscode%3A%2F%2F...",
      "tags": ["tag1", "tag2", "tag3"],
      "language": "TypeScript",
+     "framework": ["React", "Node.js"],
+     "database": ["MongoDB"],
      "featured": false,
      "createdAt": "2024-12-10"
    }
@@ -37,6 +39,21 @@ We welcome contributions from the community! This guide will help you contribute
    - A clear title describing your task
    - A description of what your task does
    - Any special requirements or dependencies
+
+## Field Descriptions
+
+- **id**: Unique identifier (use kebab-case)
+- **title**: Task name displayed in the gallery
+- **description**: Brief description of what the task does
+- **author**: Your GitHub username or organization name
+- **source**: Direct link to the task markdown file in your repository
+- **vsInstallLink**: VS Code deep link for one-click installation
+- **tags**: Array of relevant tags (lowercase, hyphenated)
+- **language**: Primary programming language (optional but recommended)
+- **framework**: Framework(s) used - can be string or array (optional)
+- **database**: Database(s) used - can be string or array (optional)
+- **featured**: Boolean to highlight on homepage
+- **createdAt**: Creation date in YYYY-MM-DD format
 
 ## Task Requirements
 

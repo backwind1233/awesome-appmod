@@ -46,6 +46,9 @@ export default function Home() {
   const [tasks, setTasks] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedLanguages, setSelectedLanguages] = useState([]);
+  const [selectedFrameworks, setSelectedFrameworks] = useState([]);
+  const [selectedDatabases, setSelectedDatabases] = useState([]);
   const [sortBy, setSortBy] = useState('alphabetical');
 
   useEffect(() => {
@@ -55,7 +58,7 @@ export default function Home() {
       .catch(error => console.error('Error loading tasks:', error));
   }, []);
 
-  // Get all unique tags
+  // Get all unique values for filters
   const allTags = useMemo(() => {
     const tagSet = new Set();
     tasks.forEach(task => {
@@ -64,6 +67,42 @@ export default function Home() {
       }
     });
     return Array.from(tagSet).sort();
+  }, [tasks]);
+
+  const allLanguages = useMemo(() => {
+    const langSet = new Set();
+    tasks.forEach(task => {
+      if (task.language) langSet.add(task.language);
+    });
+    return Array.from(langSet).sort();
+  }, [tasks]);
+
+  const allFrameworks = useMemo(() => {
+    const frameworkSet = new Set();
+    tasks.forEach(task => {
+      if (task.framework) {
+        if (Array.isArray(task.framework)) {
+          task.framework.forEach(fw => frameworkSet.add(fw));
+        } else {
+          frameworkSet.add(task.framework);
+        }
+      }
+    });
+    return Array.from(frameworkSet).sort();
+  }, [tasks]);
+
+  const allDatabases = useMemo(() => {
+    const dbSet = new Set();
+    tasks.forEach(task => {
+      if (task.database) {
+        if (Array.isArray(task.database)) {
+          task.database.forEach(db => dbSet.add(db));
+        } else {
+          dbSet.add(task.database);
+        }
+      }
+    });
+    return Array.from(dbSet).sort();
   }, [tasks]);
 
   // Filter and sort tasks
@@ -88,6 +127,31 @@ export default function Home() {
       );
     }
 
+    // Filter by selected languages
+    if (selectedLanguages.length > 0) {
+      filtered = filtered.filter(task =>
+        task.language && selectedLanguages.includes(task.language)
+      );
+    }
+
+    // Filter by selected frameworks
+    if (selectedFrameworks.length > 0) {
+      filtered = filtered.filter(task => {
+        if (!task.framework) return false;
+        const taskFrameworks = Array.isArray(task.framework) ? task.framework : [task.framework];
+        return selectedFrameworks.some(fw => taskFrameworks.includes(fw));
+      });
+    }
+
+    // Filter by selected databases
+    if (selectedDatabases.length > 0) {
+      filtered = filtered.filter(task => {
+        if (!task.database) return false;
+        const taskDatabases = Array.isArray(task.database) ? task.database : [task.database];
+        return selectedDatabases.some(db => taskDatabases.includes(db));
+      });
+    }
+
     // Sort
     if (sortBy === 'alphabetical') {
       filtered = [...filtered].sort((a, b) => a.title.localeCompare(b.title));
@@ -96,7 +160,7 @@ export default function Home() {
     }
 
     return filtered;
-  }, [tasks, searchQuery, selectedTags, sortBy]);
+  }, [tasks, searchQuery, selectedTags, selectedLanguages, selectedFrameworks, selectedDatabases, sortBy]);
 
   const toggleTag = (tag) => {
     setSelectedTags(prev =>
@@ -104,10 +168,34 @@ export default function Home() {
     );
   };
 
+  const toggleLanguage = (lang) => {
+    setSelectedLanguages(prev =>
+      prev.includes(lang) ? prev.filter(l => l !== lang) : [...prev, lang]
+    );
+  };
+
+  const toggleFramework = (fw) => {
+    setSelectedFrameworks(prev =>
+      prev.includes(fw) ? prev.filter(f => f !== fw) : [...prev, fw]
+    );
+  };
+
+  const toggleDatabase = (db) => {
+    setSelectedDatabases(prev =>
+      prev.includes(db) ? prev.filter(d => d !== db) : [...prev, db]
+    );
+  };
+
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedTags([]);
+    setSelectedLanguages([]);
+    setSelectedFrameworks([]);
+    setSelectedDatabases([]);
   };
+
+  const hasActiveFilters = selectedTags.length > 0 || selectedLanguages.length > 0 || 
+                          selectedFrameworks.length > 0 || selectedDatabases.length > 0;
 
   return (
     <Layout
@@ -150,9 +238,9 @@ export default function Home() {
             <div className={styles.filterSection}>
               <h3>Filter by</h3>
               
-              {selectedTags.length > 0 && (
+              {hasActiveFilters && (
                 <button className={styles.clearButton} onClick={clearFilters}>
-                  Clear filters
+                  Clear all filters
                 </button>
               )}
               
@@ -168,6 +256,60 @@ export default function Home() {
                     <span>{tag}</span>
                   </label>
                 ))}
+              </div>
+
+              <div className={styles.filterGroup}>
+                <h4>Language</h4>
+                {allLanguages.length > 0 ? (
+                  allLanguages.map(lang => (
+                    <label key={lang} className={styles.checkboxLabel}>
+                      <input
+                        type="checkbox"
+                        checked={selectedLanguages.includes(lang)}
+                        onChange={() => toggleLanguage(lang)}
+                      />
+                      <span>{lang}</span>
+                    </label>
+                  ))
+                ) : (
+                  <p className={styles.noItems}>No languages available</p>
+                )}
+              </div>
+
+              <div className={styles.filterGroup}>
+                <h4>Framework</h4>
+                {allFrameworks.length > 0 ? (
+                  allFrameworks.map(fw => (
+                    <label key={fw} className={styles.checkboxLabel}>
+                      <input
+                        type="checkbox"
+                        checked={selectedFrameworks.includes(fw)}
+                        onChange={() => toggleFramework(fw)}
+                      />
+                      <span>{fw}</span>
+                    </label>
+                  ))
+                ) : (
+                  <p className={styles.noItems}>No frameworks available</p>
+                )}
+              </div>
+
+              <div className={styles.filterGroup}>
+                <h4>Database</h4>
+                {allDatabases.length > 0 ? (
+                  allDatabases.map(db => (
+                    <label key={db} className={styles.checkboxLabel}>
+                      <input
+                        type="checkbox"
+                        checked={selectedDatabases.includes(db)}
+                        onChange={() => toggleDatabase(db)}
+                      />
+                      <span>{db}</span>
+                    </label>
+                  ))
+                ) : (
+                  <p className={styles.noItems}>No databases available</p>
+                )}
               </div>
             </div>
           </aside>

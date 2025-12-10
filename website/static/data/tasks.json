@@ -8,6 +8,8 @@
     "vsInstallLink": "https://vscode.dev/redirect?url=vscode%3A%2F%2Fvscjava.migrate-java-to-azure%2FinstallTask%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fbackwind1233%2Fapp-mod-my-tasks%2Fmain%2Fmicroservices-refactoring.md%26category%3Dmy-tasks",
     "tags": ["vscode", "azure", "microservices", "refactoring"],
     "language": "Java",
+    "framework": ["Spring Boot"],
+    "database": ["PostgreSQL", "MySQL"],
     "featured": true,
     "createdAt": "2024-12-10"
   }

@@ -94,6 +94,13 @@
 
 .filterGroup {
   margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.filterGroup:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .filterGroup h4 {
@@ -103,6 +110,14 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
+}
+
+.noItems {
+  font-size: 0.85rem;
+  color: #999;
+  font-style: italic;
+  margin: 0;
+  padding-left: 0.5rem;
 }
 
 .checkboxLabel {
@@ -384,8 +399,16 @@
   color: #e3e3e3;
 }
 
+[data-theme='dark'] .filterGroup {
+  border-bottom-color: #374151;
+}
+
 [data-theme='dark'] .filterGroup h4 {
   color: #a0a0a0;
+}
+
+[data-theme='dark'] .noItems {
+  color: #6b7280;
 }
 
 [data-theme='dark'] .checkboxLabel {
