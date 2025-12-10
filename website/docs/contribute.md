@@ -22,7 +22,8 @@ We welcome contributions from the community! This guide will help you contribute
      "title": "Your Task Title",
      "description": "A brief description of your task",
      "author": "your-github-username",
-     "repo": "https://github.com/your-username/your-task-repo",
+     "source": "https://github.com/your-username/your-repo/blob/main/your-task.md",
+     "vsInstallLink": "https://vscode.dev/redirect?url=vscode%3A%2F%2F...",
      "tags": ["tag1", "tag2", "tag3"],
      "language": "TypeScript",
      "featured": false,
@@ -55,7 +56,8 @@ Your task should:
 | `title` | Display name of the task | Yes |
 | `description` | Brief description (1-2 sentences) | Yes |
 | `author` | GitHub username of the creator | Yes |
-| `repo` | GitHub repository URL | Yes |
+| `source` | Direct link to the task markdown file | Yes |
+| `vsInstallLink` | VS Code installation deep link | No |
 | `tags` | Array of relevant tags | Yes |
 | `language` | Primary programming language | No |
 | `featured` | Whether to feature on homepage (set by maintainers) | No |

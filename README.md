@@ -46,7 +46,8 @@ See our [Contribution Guide](https://backwind1233.github.io/awesome-appmod/docs/
   "title": "Your Task Title",
   "description": "Brief description of your task",
   "author": "your-github-username",
-  "repo": "https://github.com/your-username/your-task-repo",
+  "source": "https://github.com/your-username/your-repo/blob/main/your-task.md",
+  "vsInstallLink": "https://vscode.dev/redirect?url=vscode%3A%2F%2F...",
   "tags": ["vscode", "azure", "automation"],
   "language": "TypeScript",
   "featured": false,
@@ -106,7 +107,7 @@ awesome-appmod/
 
 ## 🌟 Featured Tasks
 
-- **[App Mod My Tasks](https://github.com/backwind1233/app-mod-my-tasks)** - A collection of Microsoft tasks for application modernization workflows in VS Code
+- **[Microservices Refactoring](https://github.com/backwind1233/app-mod-my-tasks/blob/main/microservices-refactoring.md)** - A comprehensive task for refactoring monolithic applications into microservices architecture
 
 ## 📖 Resources
 

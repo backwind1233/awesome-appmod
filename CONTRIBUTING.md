@@ -20,13 +20,16 @@ The primary way to contribute is by adding your app modernization task to the ga
   "title": "Task Title",
   "description": "Brief description (1-2 sentences)",
   "author": "github-username",
-  "repo": "https://github.com/username/repo",
+  "source": "https://github.com/username/repo/blob/main/task-name.md",
+  "vsInstallLink": "https://vscode.dev/redirect?url=vscode%3A%2F%2F...",
   "tags": ["tag1", "tag2", "tag3"],
   "language": "TypeScript",
   "featured": false,
   "createdAt": "YYYY-MM-DD"
 }
 ```
+
+**Note:** The `source` field should point to the specific markdown file containing your task, not just the repository root. The `vsInstallLink` is optional but highly recommended - it's the VS Code deep link that allows users to install your task directly.
 
 ### 2. Improve Documentation
 

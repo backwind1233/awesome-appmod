@@ -1,12 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-/**
- * @type {import('@docusaurus/types').Config}
- */
+const {themes: prismThemes} = require('prism-react-renderer');
 
-import { themes as prismThemes } from "prism-react-renderer";
-
+/** @type {import('@docusaurus/types').Config} */
 const config = {
   // CONFIG: Add Custom Fields - globally reference them from siteConfig
   customFields: {
@@ -68,8 +65,8 @@ const config = {
         },
         items: [
           {
-            to: "/getting-started",
-            label: "Getting Started",
+            to: "/",
+            label: "Task Gallery",
             position: "left",
           },
           {

@@ -1,12 +1,13 @@
 [
   {
-    "id": "app-mod-my-tasks",
-    "title": "App Modernization My Tasks",
-    "description": "A collection of Microsoft tasks for application modernization workflows in VS Code",
+    "id": "microservices-refactoring",
+    "title": "Microservices Refactoring Task",
+    "description": "A comprehensive task for refactoring monolithic applications into microservices architecture using Azure services",
     "author": "backwind1233",
-    "repo": "https://github.com/backwind1233/app-mod-my-tasks",
-    "tags": ["vscode", "appmod", "tasks", "automation"],
-    "language": "TypeScript",
+    "source": "https://github.com/backwind1233/app-mod-my-tasks/blob/main/microservices-refactoring.md",
+    "vsInstallLink": "https://vscode.dev/redirect?url=vscode%3A%2F%2Fvscjava.migrate-java-to-azure%2FinstallTask%3Furl%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2Fbackwind1233%2Fapp-mod-my-tasks%2Fmain%2Fmicroservices-refactoring.md%26category%3Dmy-tasks",
+    "tags": ["vscode", "azure", "microservices", "refactoring"],
+    "language": "Java",
     "featured": true,
     "createdAt": "2024-12-10"
   }

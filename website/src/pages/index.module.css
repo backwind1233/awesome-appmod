@@ -1,19 +1,476 @@
-.heroBanner {
-  padding: 4rem 0;
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 4rem 2rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  color: white;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroContent {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.buttons {
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.searchContainer {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput:focus {
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.heroNote {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.heroNote a {
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Main Layout */
+.main {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.filterSection {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 2rem;
+}
+
+.filterSection h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.filterGroup {
+  margin-top: 1.5rem;
+}
+
+.filterGroup h4 {
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.checkboxLabel {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.checkboxLabel:hover {
+  color: #0078d4;
+}
+
+.checkboxLabel input {
+  margin-right: 0.75rem;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.checkboxLabel span {
+  user-select: none;
+}
+
+.clearButton {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.clearButton:hover {
+  background-color: #006cbe;
+}
+
+/* Content Area */
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.resultsCount {
+  margin: 0;
+  color: #666;
+}
+
+.sortContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sortContainer label {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.sortSelect {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* Task Grid */
+.taskGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Task Card */
+.taskCard {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.taskCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.taskHeader {
+  margin-bottom: 1rem;
+}
+
+.taskTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.taskTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #0078d4;
+  flex: 1;
+  line-height: 1.3;
+}
+
+.badge {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #333;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.author {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.description {
+  flex: 1;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background-color: #e8f4ff;
+  color: #0078d4;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+}
+
+.meta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.language {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.installButton {
+  flex: 1;
+  min-width: 140px;
+  background-color: #0078d4;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+  transition: background-color 0.2s;
+  display: inline-block;
+}
+
+.installButton:hover {
+  background-color: #006cbe;
+  color: white;
+  text-decoration: none;
+}
+
+.sourceLink {
+  flex: 1;
+  min-width: 120px;
+  color: #0078d4;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid #0078d4;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.sourceLink:hover {
+  background-color: #0078d4;
+  color: white;
+  text-decoration: none;
+}
+
+/* No Results */
+.noResults {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 8px;
+}
+
+.noResults p {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+/* CTA Section */
+.ctaSection {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ctaSection h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.ctaSection p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Dark Mode */
+[data-theme='dark'] .filterSection {
+  background-color: #242526;
+  border: 1px solid #444;
+}
+
+[data-theme='dark'] .filterSection h3 {
+  color: #e3e3e3;
+}
+
+[data-theme='dark'] .filterGroup h4 {
+  color: #a0a0a0;
+}
+
+[data-theme='dark'] .checkboxLabel {
+  color: #e3e3e3;
+}
+
+[data-theme='dark'] .checkboxLabel:hover {
+  color: #4d9ee5;
+}
+
+[data-theme='dark'] .taskCard {
+  background-color: #242526;
+  border: 1px solid #444;
+}
+
+[data-theme='dark'] .taskTitle {
+  color: #4d9ee5;
+}
+
+[data-theme='dark'] .description {
+  color: #b0b0b0;
+}
+
+[data-theme='dark'] .author,
+[data-theme='dark'] .language {
+  color: #888;
+}
+
+[data-theme='dark'] .tag {
+  background-color: #1a3a5a;
+  color: #6db0eb;
+}
+
+[data-theme='dark'] .noResults {
+  background-color: #242526;
+  border: 1px solid #444;
+}
+
+[data-theme='dark'] .ctaSection {
+  background-color: #242526;
+  border: 1px solid #444;
+}
+
+[data-theme='dark'] .installButton {
+  background-color: #4d9ee5;
+}
+
+[data-theme='dark'] .installButton:hover {
+  background-color: #6db0eb;
+}
+
+[data-theme='dark'] .sourceLink {
+  color: #4d9ee5;
+  border-color: #4d9ee5;
+}
+
+[data-theme='dark'] .sourceLink:hover {
+  background-color: #4d9ee5;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 996px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .filterSection {
+    position: static;
+  }
+
+  .taskGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .resultsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
