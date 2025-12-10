@@ -77,7 +77,7 @@ const config = {
           },
           {
             to: "https://github.com/backwind1233/app-mod-my-tasks",
-            label: "My Tasks",
+            label: "Community",
             position: "left",
           },
           {
