@@ -1,0 +1,8 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#f3f4f6"/>
+  <rect x="50" y="50" width="500" height="300" fill="#e5e7eb" rx="10"/>
+  <circle cx="150" cy="150" r="40" fill="#0078d4"/>
+  <rect x="220" y="130" width="300" height="20" fill="#d1d5db" rx="5"/>
+  <rect x="220" y="170" width="250" height="20" fill="#d1d5db" rx="5"/>
+  <text x="300" y="250" font-family="Arial" font-size="24" fill="#6b7280" text-anchor="middle">Docusaurus Mountain</text>
+</svg>

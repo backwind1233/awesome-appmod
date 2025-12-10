@@ -1,0 +1,13 @@
+[
+  {
+    "id": "app-mod-my-tasks",
+    "title": "App Modernization My Tasks",
+    "description": "A collection of Microsoft tasks for application modernization workflows in VS Code",
+    "author": "backwind1233",
+    "repo": "https://github.com/backwind1233/app-mod-my-tasks",
+    "tags": ["vscode", "appmod", "tasks", "automation"],
+    "language": "TypeScript",
+    "featured": true,
+    "createdAt": "2024-12-10"
+  }
+]

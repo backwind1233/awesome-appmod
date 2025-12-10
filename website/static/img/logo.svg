@@ -1,0 +1,5 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#0078d4"/>
+  <text x="100" y="110" font-family="Arial" font-size="60" fill="white" text-anchor="middle" font-weight="bold">AM</text>
+  <text x="100" y="160" font-family="Arial" font-size="20" fill="white" text-anchor="middle">AppMod</text>
+</svg>

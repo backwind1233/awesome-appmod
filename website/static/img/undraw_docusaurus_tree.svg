@@ -1,0 +1,9 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#f3f4f6"/>
+  <ellipse cx="300" cy="350" rx="200" ry="30" fill="#d1d5db"/>
+  <rect x="280" y="250" width="40" height="100" fill="#92400e"/>
+  <circle cx="300" cy="200" r="80" fill="#10b981"/>
+  <circle cx="260" cy="180" r="50" fill="#059669"/>
+  <circle cx="340" cy="180" r="50" fill="#059669"/>
+  <text x="300" y="390" font-family="Arial" font-size="24" fill="#6b7280" text-anchor="middle">Docusaurus Tree</text>
+</svg>
